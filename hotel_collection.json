@@ -1,0 +1,363 @@
+{
+  "info": {
+    "name": "Hotel Management API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Collection per gestire hotel, stanze, prenotazioni e utenti"
+  },
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"admin123\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/login",
+              "host": ["{{base_url}}"],
+              "path": ["api", "login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Register",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"username\": \"newuser\",\n    \"password\": \"password123\",\n    \"email\": \"user@example.com\",\n    \"role\": \"guest\",\n    \"full_name\": \"Mario Rossi\",\n    \"phone\": \"1234567890\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/register",
+              "host": ["{{base_url}}"],
+              "path": ["api", "register"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Rooms",
+      "item": [
+        {
+          "name": "Get All Rooms",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/get_rooms",
+              "host": ["{{base_url}}"],
+              "path": ["api", "get_rooms"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Add Room",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"room_number\": \"101\",\n    \"room_type\": \"double\",\n    \"capacity\": 2,\n    \"price_per_night\": 120,\n    \"hotel_id\": 1,\n    \"description\": \"Camera doppia con vista mare\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/add_rooms",
+              "host": ["{{base_url}}"],
+              "path": ["api", "add_rooms"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Room by ID",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/rooms/1",
+              "host": ["{{base_url}}"],
+              "path": ["api", "rooms", "1"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete Room by Number & Hotel",
+          "request": {
+            "method": "DELETE",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/delete_rooms?room_number=101&nome_hotel=Grand Hotel",
+              "host": ["{{base_url}}"],
+              "path": ["api", "delete_rooms"],
+              "query": [
+                {
+                  "key": "room_number",
+                  "value": "101"
+                },
+                {
+                  "key": "nome_hotel",
+                  "value": "Grand Hotel"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Check Room Availability",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/rooms/1/availability?check_in=2025-06-01&check_out=2025-06-10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "rooms", "1", "availability"],
+              "query": [
+                {
+                  "key": "check_in",
+                  "value": "2025-06-01"
+                },
+                {
+                  "key": "check_out",
+                  "value": "2025-06-10"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Available Rooms in Hotel",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/hotels/1/available-rooms?check_in=2025-06-01&check_out=2025-06-10&room_type=double&min_capacity=2",
+              "host": ["{{base_url}}"],
+              "path": ["api", "hotels", "1", "available-rooms"],
+              "query": [
+                {
+                  "key": "check_in",
+                  "value": "2025-06-01"
+                },
+                {
+                  "key": "check_out",
+                  "value": "2025-06-10"
+                },
+                {
+                  "key": "room_type",
+                  "value": "double"
+                },
+                {
+                  "key": "min_capacity",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Bookings",
+      "item": [
+        {
+          "name": "Create Booking",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"room_id\": 1,\n    \"check_in\": \"2025-06-01\",\n    \"check_out\": \"2025-06-05\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/bookings",
+              "host": ["{{base_url}}"],
+              "path": ["api", "bookings"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Process Booking (Approve/Reject)",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"action\": \"approve\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/bookings/1/process",
+              "host": ["{{base_url}}"],
+              "path": ["api", "bookings", "1", "process"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Bookings",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/users/bookings",
+              "host": ["{{base_url}}"],
+              "path": ["api", "users", "bookings"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Pending Bookings",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{auth_token}}"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/bookings/pending?hotel_id=1&from_date=2025-01-01",
+              "host": ["{{base_url}}"],
+              "path": ["api", "bookings", "pending"],
+              "query": [
+                {
+                  "key": "hotel_id",
+                  "value": "1"
+                },
+                {
+                  "key": "from_date",
+                  "value": "2025-01-01"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Hotels",
+      "item": [
+        {
+          "name": "Get Nearby Hotels",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/api/hotels/nearby?lat=41.9028&lng=12.4964&radius=10",
+              "host": ["{{base_url}}"],
+              "path": ["api", "hotels", "nearby"],
+              "query": [
+                {
+                  "key": "lat",
+                  "value": "41.9028"
+                },
+                {
+                  "key": "lng",
+                  "value": "12.4964"
+                },
+                {
+                  "key": "radius",
+                  "value": "10"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:5000"
+    }
+  ]
+}
