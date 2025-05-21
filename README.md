@@ -11,10 +11,10 @@ Progetto Hotel Docker => ONDA SICULA.
 
 PALETTE COLORI: 
 
-1. #D9D9D,
-2. #BF712C,
-3. #8C451C,
-4. #F2F2F2,
+1. #D9D9D
+2. #BF712C
+3. #8C451C
+4. #F2F2F2
 5. #0D0D0D
 
 
