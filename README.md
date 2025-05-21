@@ -6,6 +6,6 @@ Gabriele Bernava,
 Giuseppe Bonafede,
 Valerio Carlino.
 
-
-Per il progetto:
-DATABASE - Schema concettuale E/R con relazioni binarie (non ternarie) e chiavi singole (non in comune con altre entità). Ogni entità viene trasformata in una tabella considerando le cardinalità, useremo i vincoli per l'inserimento delle tuple.
+Progetto Hotel Docker.
+ONDA SICULA.
+PALETTE COLORI: #D9D9D, #BF712C, #8C451C, #F2F2F2, #0D0D0D
