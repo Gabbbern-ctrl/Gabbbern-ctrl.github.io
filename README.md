@@ -6,8 +6,9 @@ Gabriele Bernava,
 Giuseppe Bonafede,
 Valerio Carlino.
 
-Progetto Hotel Docker.
-ONDA SICULA.
+Progetto Hotel Docker => ONDA SICULA.
+
+
 PALETTE COLORI: #D9D9D, #BF712C, #8C451C, #F2F2F2, #0D0D0D
 
 
