@@ -7,12 +7,37 @@ body {
 header {
     background-color: #F2F2F2;
     color: #BF712C;
-    padding: 1rem 0;
-    text-align: center;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.logo-link {
+    position: absolute;
+    left: 2rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.logo {
+    height: 110px;
+    width: auto;
+    display: block;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 nav {
     background-color: #F2F2F2;
     padding: 0.5rem;
+    display: flex;
     text-align: center;
 }
 nav a {
