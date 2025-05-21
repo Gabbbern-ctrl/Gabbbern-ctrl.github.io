@@ -6,6 +6,16 @@ Gabriele Bernava,
 Giuseppe Bonafede,
 Valerio Carlino.
 
+Progetto Hotel Docker => ONDA SICULA.
 
-Per il progetto:
-DATABASE - Schema concettuale E/R con relazioni binarie (non ternarie) e chiavi singole (non in comune con altre entità). Ogni entità viene trasformata in una tabella considerando le cardinalità, useremo i vincoli per l'inserimento delle tuple.
+
+PALETTE COLORI: 
+
+1. #D9D9D
+2. #BF712C
+3. #8C451C
+4. #F2F2F2
+5. #0D0D0D
+
+
+&copy; 2025 Onda Sicula. Tutti i diritti riservati ABBC.
