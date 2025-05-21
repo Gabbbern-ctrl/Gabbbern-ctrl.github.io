@@ -5,18 +5,18 @@ body {
     background-color: #F2F2F2;
 }
 header {
-    background-color: #333;
-    color: white;
+    background-color: #F2F2F2;
+    color: #BF712C;
     padding: 1rem 0;
     text-align: center;
 }
 nav {
-    background-color: #444;
+    background-color: #F2F2F2;
     padding: 0.5rem;
     text-align: center;
 }
 nav a {
-    color: white;
+    color: #8C451C;
     margin: 0 1rem;
     text-decoration: none;
 }
@@ -27,61 +27,53 @@ main {
     padding: 2rem;
 }
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #F2F2F2;
+    color: #BF712C;
     text-align: center;
     padding: 1rem 0;
     position: fixed;
     bottom: 0;
     width: 100%;
 }
-.button {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-}
-.button:hover {
-    background-color: #0056b3;
+
+/* Reset di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body, html {
-    margin: 0;
-    padding: 0;
     height: 100%;
+    background-color: #F2F2F2;
+    font-family: 'Helvetica Neue', sans-serif;
 }
 
+/* Contenitore centrale */
 .home {
-    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
     height: 100vh;
-    background-image: url('IMG/000086737.jpg');
+    background-image: url('IMG/back.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    overflow: hidden;
+    justify-content: center;
 }
 
-.home::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* overlay scuro con trasparenza */
-    z-index: 1;
+/* Testo sopra l'immagine */
+.home h1 {
+    font-size: 4rem;
+    color: #F2F2F2;
+    text-shadow: 0 2px 8px rgba(242, 242, 242, 1);
+    letter-spacing: 8px;
+    margin-bottom: 20px;
 }
 
-.contenuto {
-    position: relative;
-    z-index: 2; /* per stare sopra l’overlay */
-    color: white;
-    text-align: center;
-    text-shadow: 1px 1px 5px black;
-    font-family: Arial, sans-serif;
+.home p {
+    font-size: 1.2rem;
+    color: #F2F2F2;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
-
