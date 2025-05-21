@@ -49,11 +49,11 @@ body, html {
     font-family: 'Helvetica Neue', sans-serif;
 }
 
-/* Contenitore centrale */
 .home {
+    position: relative;
     max-width: 1400px;
+    aspect-ratio: 16 / 9;
     margin: 0 auto;
-    height: 100vh;
     background-image: url('IMG/back.png');
     background-size: cover;
     background-position: center;
@@ -63,13 +63,18 @@ body, html {
     justify-content: center;
 }
 
-/* Testo sopra l'immagine */
-.home h1 {
-    font-size: 4rem;
-    color: #F2F2F2;
-    text-shadow: 0 2px 8px rgba(242, 242, 242, 1);
-    letter-spacing: 8px;
-    margin-bottom: 20px;
+.home::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* overlay semitrasparente solo sulla foto */
+    z-index: 1;
+}
+
+/* Testo sopra overlay */
+.home h1, .home p {
+    position: relative;
+    z-index: 2;
 }
 
 .home p {
