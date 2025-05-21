@@ -51,7 +51,7 @@ body, html {
 
 .home {
     position: relative;
-    max-width: 1400px;
+    max-width: 1500px;
     aspect-ratio: 16 / 9;
     margin: 0 auto;
     background-image: url('IMG/back.png');
