@@ -145,6 +145,8 @@ body, html {
     margin-bottom: 1rem;
     letter-spacing: 6px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    animation: fadeInUp 1.2s ease-out forwards;
+    opacity: 0;
 }
 
 .testo-home p {
@@ -152,6 +154,8 @@ body, html {
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
     margin-top: 10px;
     text-align: center;
+    animation: fadeInUp 1.2s ease-out forwards;
+    opacity: 0;
 }
 
 .foto-home {
@@ -161,6 +165,8 @@ body, html {
     height: auto;
     border-radius: 8px;
     object-fit: cover;
+    animation: fadeInUp 1.2s ease-out forwards;
+    opacity: 0;
 
     top: 110px;
 }
@@ -186,6 +192,27 @@ contatti-container {
     animation: fadeSlideUp 1s forwards;
     width: 100%;
 }
+
+
+.contatto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.left{
+    animation-name: slideInLeft;
+}
+
+.right {
+    animation-name: slideInRight;
+}
+
 
 .contatto.right {
     flex-direction: row-reverse;
@@ -214,7 +241,33 @@ contatti-container {
     margin-bottom: 1rem;
 }
 
-@keyframes fadeSlideUp {
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
     to {
         opacity: 1;
         transform: translateY(0);
