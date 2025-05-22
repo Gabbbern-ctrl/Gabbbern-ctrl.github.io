@@ -165,3 +165,58 @@ body, html {
     top: 110px;
 }
 
+contatti-container {
+    max-width: 1000px;
+    margin: 4rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 0 1rem;
+    align-items: center
+}
+
+.contatto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeSlideUp 1s forwards;
+    width: 100%;
+}
+
+.contatto.right {
+    flex-direction: row-reverse;
+}
+
+.contatto img {
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.info {
+    max-width: 500px;
+    text-align: center;
+}
+
+.info h2 {
+    color: #BF712C;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.info p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+@keyframes fadeSlideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
