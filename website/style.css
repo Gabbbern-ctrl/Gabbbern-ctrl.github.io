@@ -66,15 +66,20 @@ nav a:hover {
 main {
     padding: 2rem;
 }
+
 footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* opzionale: stile */
     background-color: #F2F2F2;
     color: #BF712C;
     text-align: center;
     padding: 1rem 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+    z-index: 100; /* per stare sopra altri contenuti */
 }
+
 
 /* Reset di base */
 * {
@@ -91,38 +96,31 @@ body, html {
 
 .home {
     position: relative;
+    height: 130vh;
     overflow: hidden;
-    max-width: 1400px;
-    aspect-ratio: 16 / 9;
-    margin: 0 auto;
     background-image: url('IMG/back2.png');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.home::before {
-    content: "";
+.overlay-dinamico {
     position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.4); /* overlay semitrasparente solo sulla foto */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.4);
     z-index: 1;
+    pointer-events: none;
+    transform: translateY(0);
+    transition: transform 0.05s linear;
 }
 
-/* Testo sopra overlay */
-.home h1, .home p {
-    position: relative;
-    z-index: 2;
-}
-
-.home p {
-    font-size: 1.2rem;
-    color: #F2F2F2;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
-}
 
 .testo-home {
     font-family: 'FontHome', sans-serif;
@@ -145,7 +143,7 @@ body, html {
     margin-bottom: 1rem;
     letter-spacing: 6px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-    animation: fadeInUp 1.2s ease-out forwards;
+    animation: fadeInUp 1.8s ease-out forwards;
     opacity: 0;
 }
 
@@ -240,6 +238,13 @@ contatti-container {
     font-size: 1rem;
     margin-bottom: 1rem;
 }
+
+
+.parallax {
+
+}
+
+
 
 @keyframes slideInLeft {
     0% {

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Contatti - Onda Sicula</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="IMG/icoONDASICULA.ico" type="image/x-icon">
+
+</head>
+<body>
+
+<script>
+  function includeHTML() {
+    fetch("header-footer.html")
+            .then(response => response.text())
+            .then(data => {
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(data, "text/html");
+
+              document.getElementById("header").innerHTML = doc.getElementById("header").innerHTML;
+              document.getElementById("footer").innerHTML = doc.getElementById("footer").innerHTML;
+            });
+  }
+
+
+  window.addEventListener("DOMContentLoaded", includeHTML);
+</script>
+
+</body>
+
+<div id="header"></div>
+
+<section class="parallax"></section>
+
+
+<div id="footer"></div>
+
+
+</html>

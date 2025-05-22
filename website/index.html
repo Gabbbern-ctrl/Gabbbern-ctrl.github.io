@@ -25,9 +25,31 @@
     window.addEventListener("DOMContentLoaded", includeHTML);
 </script>
 
+<script>
+    window.addEventListener('scroll', () => {
+        const home = document.querySelector('.home');
+        const overlay = document.querySelector('.overlay-dinamico');
+        const rect = home.getBoundingClientRect();
+
+        if (rect.top <= 0 && rect.bottom >= 0) {
+            // Solo quando la sezione è visibile nel viewport
+            const scrolled = Math.min(Math.abs(rect.top), home.offsetHeight);
+            const progress = scrolled / home.offsetHeight;
+            overlay.style.transform = `translateY(${progress * 40}px)`;
+        } else {
+            // Quando esce dalla vista, resetta
+            overlay.style.transform = 'translateY(0px)';
+        }
+    });
+</script>
+
+
 <body>
     <div id="header"></div>
+
     <div class="home">
+        <div class="overlay-dinamico"></div>
+
         <div class="logo-home">
             <img src="IMG/Logo.png" alt="Logo" class="foto-home" />
         </div>
