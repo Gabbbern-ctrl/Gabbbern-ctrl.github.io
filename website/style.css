@@ -1,9 +1,24 @@
+@font-face {
+    font-family: 'MioFont'; /* nome che userai nel CSS */
+    src: url('Font/DIN2014_NarrowLight.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FontHome'; /* nome che userai nel CSS */
+    src: url('Font/Trajan Bold.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: MioFont, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #F2F2F2;
 }
+
 header {
     background-color: #F2F2F2;
     color: #BF712C;
@@ -71,15 +86,16 @@ footer {
 body, html {
     height: 100%;
     background-color: #F2F2F2;
-    font-family: 'Helvetica Neue', sans-serif;
+    font-family: 'MioFont', sans-serif;
 }
 
 .home {
     position: relative;
-    max-width: 1500px;
+    overflow: hidden;
+    max-width: 1400px;
     aspect-ratio: 16 / 9;
     margin: 0 auto;
-    background-image: url('IMG/back.png');
+    background-image: url('IMG/back2.png');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -107,3 +123,45 @@ body, html {
     color: #F2F2F2;
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 }
+
+.testo-home {
+    font-family: 'FontHome', sans-serif;
+    position: relative;
+    z-index: 2;
+    color: #F2F2F2;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    height: 100%; /* Centra verticalmente */
+    padding: 0 1rem; /* Per non andare a bordo schermo su mobile */
+}
+
+.testo-home h1 {
+    font-size: 4rem; /* Titolo grande */
+    margin-bottom: 1rem;
+    letter-spacing: 6px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.testo-home p {
+    font-size: 1rem;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+    margin-top: 10px;
+    text-align: center;
+}
+
+.foto-home {
+    position: relative;
+    z-index: 3;
+    width: 300px;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+
+    top: 110px;
+}
+
