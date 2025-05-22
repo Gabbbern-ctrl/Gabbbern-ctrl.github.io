@@ -169,6 +169,47 @@ body, html {
     top: 110px;
 }
 
+.booking {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.booking p {
+    margin: 0.3rem 0;
+}
+
+.buttons {
+    margin-top: 1rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 0.5rem;
+    font-weight: bold;
+}
+
+.approve {
+    background-color: #BF712C;
+    color: white;
+}
+
+.reject {
+    background-color: #f44336;
+    color: white;
+}
+
+.message {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #BF712C;
+}
 contatti-container {
     max-width: 1000px;
     margin: 4rem auto;
