@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione Stanze</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="IMG/icoONDASICULA.ico" type="image/x-icon">
+    <script>
+        function includeHTML() {
+            fetch("header-footer.html")
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(data, "text/html");
+
+                    document.getElementById("header").innerHTML = doc.getElementById("header").innerHTML;
+                    document.getElementById("footer").innerHTML = doc.getElementById("footer").innerHTML;
+                });
+        }
+
+        window.addEventListener("DOMContentLoaded", includeHTML);
+    </script>
+</head>
+<body>
+
+    <div id="header"></div>
+
+    <div id="footer"></div>
+</body>
+</html>
