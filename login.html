@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Onda Sicula</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="IMG/icoONDASICULA.ico" type="image/x-icon">
+</head>
+<body>
+<section class="login-section">
+    <h2>Login</h2>
+
+    <form action="login.php" method="post" class="login-form">
+        <div class="form-group">
+            <label for="email">E-mail</label>
+            <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="esempio@dominio.it"
+                    required
+            >
+        </div>
+
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="Inserisci la tua password"
+                    required
+            >
+        </div>
+
+        <div class="form-group">
+            <button type="submit">Accedi</button>
+        </div>
+
+        <div class="register-cta">
+            <p>Non hai un account? <a href="registrazione.html">Registrati ora!</a></p>
+        </div>
+    </form>
+</section>
+<script src="login.js" defer></script>
+</body>
+</html>
