@@ -1,15 +1,25 @@
-document.addEventListener('DOMContentLoaded', () => {
-    caricaPrenotazioni();
-});
+// reception.js - versione mock per testare il front-end senza back-end
+
+document.addEventListener('DOMContentLoaded', caricaPrenotazioni);
+
+// Dati di esempio locali per test
+const MOCK_BOOKINGS = [
+    { id: 1, room_id: 101, start_date: '2025-06-01', end_date: '2025-06-05' },
+    { id: 2, room_id: 202, start_date: '2025-06-10', end_date: '2025-06-12' }
+];
 
 async function caricaPrenotazioni() {
     const container = document.getElementById('booking-list');
     container.innerHTML = '<p>Caricamento in corso...</p>';
 
     try {
-        const response = await fetch('/api/bookings/pending');
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const data = await response.json();
+        // Chiamata API originale commentata per il mock:
+        // const response = await fetch('/api/bookings/pending');
+        // const data = await response.json();
+
+        // Usa dati locali per test
+        const data = MOCK_BOOKINGS;
+
         container.innerHTML = '';
 
         if (data.length === 0) {
@@ -46,13 +56,17 @@ async function caricaPrenotazioni() {
 
 async function decidi(id, decisione) {
     try {
-        const response = await fetch(`/api/bookings/${id}/decision`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ decision: decisione }),
-        });
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        const result = await response.json();
+        // Chiamata API originale commentata per il mock:
+        // const response = await fetch(`/api/bookings/${id}/decision`, {
+        //     method: 'POST',
+        //     headers: { 'Content-Type': 'application/json' },
+        //     body: JSON.stringify({ decision: decisione }),
+        // });
+        // const result = await response.json();
+
+        // Simula risposta per test
+        const result = { message: `Prenotazione ${decisione === 'approved' ? 'approvata' : 'rifiutata'} (mock).` };
+
         alert(result.message);
         caricaPrenotazioni();
     } catch (error) {
