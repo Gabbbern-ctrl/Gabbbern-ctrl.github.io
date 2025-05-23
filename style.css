@@ -319,3 +319,81 @@ contatti-container {
         transform: translateY(0);
     }
 }
+
+.register-section {
+    max-width: 400px;           /* larghezza massima fissa */
+    margin: 50px auto;          /* centratura orizzontale e margine verticale */
+    padding: 20px;              /* spazio interno */
+    background: #fff;           /* sfondo bianco */
+    border-radius: 8px;         /* angoli stondati */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* ombra delicata */
+}
+
+/* Titolo al centro e distanza dal form */
+.register-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+/* Gruppo di ciascun campo (label + input) */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Label in block per occupare tutta la larghezza */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+/* Input full-width con padding e bordo arrotondato */
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+/* Stile al focus per evidenziare il campo attivo */
+.form-group input:focus {
+    outline: none;
+    border-color:  #BF712C;
+}
+
+/* Pulsante di registrazione: full-width e colore primario */
+.register-form button {
+    width: 100%;
+    padding: 10px;
+    background:  #BF712C;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Hover sul pulsante per dare un feedback visivo */
+.register-form button:hover {
+    background:  #BF712C;
+}
+
+/* Call-to-action per tornare al login */
+.login-cta {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Link all'interno della call-to-action */
+.login-cta a {
+    color:  #BF712C;
+    text-decoration: none;
+}
+
+.login-cta a:hover {
+    text-decoration: underline;
+}
+
