@@ -4,8 +4,11 @@ document.addEventListener('DOMContentLoaded', caricaPrenotazioni);
 
 // Dati di esempio locali per test
 const MOCK_BOOKINGS = [
-    { id: 1, room_id: 101, start_date: '2025-06-01', end_date: '2025-06-05' },
-    { id: 2, room_id: 202, start_date: '2025-06-10', end_date: '2025-06-12' }
+    { id: 1, room_id: 109, start_date: '2025-06-01', end_date: '2025-06-05' },
+    { id: 2, room_id: 202, start_date: '2025-06-10', end_date: '2025-06-12' },
+    { id: 3, room_id: 104, start_date: '2025-06-15', end_date: '2025-06-17' },
+    { id: 4, room_id: 420, start_date: '2025-06-19', end_date: '2025-06-22' },
+    { id: 5, room_id: 69, start_date: '2025-07-10', end_date: '2025-07-12' }
 ];
 
 async function caricaPrenotazioni() {

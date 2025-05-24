@@ -169,47 +169,69 @@ body, html {
     top: 110px;
 }
 
+/*Inizio sezione reception*/
+#booking-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 .booking {
-    background: #fff;
-    border: 1px solid #ddd;
-    padding: 1rem;
-    margin-bottom: 1rem;
+    background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.2s ease;
+}
+
+.booking:hover {
+    transform: translateY(-3px);
 }
 
 .booking p {
-    margin: 0.3rem 0;
+    margin: 5px 0;
 }
 
 .buttons {
-    margin-top: 1rem;
+    margin-top: 15px;
 }
 
-button {
-    padding: 0.5rem 1rem;
+.buttons button {
+    padding: 10px 15px;
     border: none;
-    border-radius: 6px;
+    border-radius: 4px;
     cursor: pointer;
-    margin-right: 0.5rem;
-    font-weight: bold;
+    font-size: 0.9em;
+    margin-right: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.buttons button:focus {
+    outline: none;
 }
 
 .approve {
-    background-color: #BF712C;
-    color: white;
+    background-color: #28a745;
+    color: #fff;
+}
+
+.approve:hover {
+    background-color: #218838;
 }
 
 .reject {
-    background-color: #f44336;
-    color: white;
+    background-color: #dc3545;
+    color: #fff;
 }
 
-.message {
-    margin-top: 1rem;
-    font-weight: bold;
-    color: #BF712C;
+.reject:hover {
+    background-color: #c82333;
 }
+
+/*Fine sezione */
+
 contatti-container {
     max-width: 1000px;
     margin: 4rem auto;
